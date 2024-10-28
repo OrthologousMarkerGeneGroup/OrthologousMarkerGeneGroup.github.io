@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMG tutorials</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            color: #333;
+        }
+        /* Sidebar Navigation */
+        nav {
+            width: 200px;
+            background-color: #f2f2f2;
+            padding-top: 20px;
+            height: 100vh;
+            position: fixed;
+        }
+        nav a {
+            display: block;
+            color: #800064;
+            text-decoration: none;
+            padding: 15px;
+            font-weight: bold;
+            text-align: left;
+            margin-left: 10px;
+        }
+        nav a:hover {
+            background-color: #ffe6fb;
+            color: #ff00d0;
+        }
+        /* Main Content Area */
+        .main-content {
+            margin-left: 220px; /* space for the sidebar */
+            padding: 20px;
+            flex-grow: 1;
+        }
+        header {
+            background-color: #800064;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .section {
+            margin-top: 2rem;
+        }
+        footer {
+            background-color: #800064;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        /* Style for code blocks */
+        pre {
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            overflow: auto;
+        }
+        code {
+            font-family: Consolas, monospace;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Navigation Bar -->
+    <nav>
+        <a href="/Users/tranchau/Documents/OMG_tutorial/installR.html">Install R and Rstudio</a>
+        <a href="/Users/tranchau/Documents/OMG_tutorial/basicR.html">Essential R code</a>
+        <a href="#data_processing">scRNA-seq data processing</a>
+        <a href="/Users/tranchau/Documents/OMG_tutorial/markergene.html">Marker genes identification</a>
+        <a href="https://youtu.be/Jb4uMq394Sg">Website guidence</a>
+        <a href="https://github.com/LiLabAtVT/OrthoMarkerGenes">Code guidence</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Header Section -->
+        <header>
+            <h1>Orthologous marker gene tutorial</h1>
+            <p>Learning how to use the OMG method to classify cell type cluster in your scRNA-seq data in plants</p>
+        </header>
+
+        <!-- Install R and Rstudio Sections -->
+        <div id="installR" class="section">
+            <h2>1. Install R and RStudio</h2>
+            <ul>
+            <h3>Install R:</h3>
+            <ul>
+            <h4>Windows:</h4>
+            <ul>
+                <li>Visit <a href="https://cran.r-project.org/bin/windows/base/" target="_blank">R for Windows</a> and download the .exe file.</li>
+                <li>Run the installer and follow prompts to complete setup.</li>
+            </ul>
+            
+            <h4>MacOS:</h4>
+            <ul>
+                <li>Visit <a href="https://cran.r-project.org/bin/macosx/" target="_blank">R for macOS</a>, choose the correct version (Apple Silicon or Intel).</li>
+                <li>Download the .pkg file and install by following prompts.</li>
+            </ul>
+            
+            <h4>Linux (Ubuntu):</h4>
+            <ul>
+                <li>Open terminal, update packages, and install R:</li>
+            </ul>
+            <pre><code>
+sudo apt update
+sudo apt install r-base r-base-dev -y
+            </code></pre>
+        </ul>
+            <h3>Install RStudio</h3>
+            <p>Download and install RStudio from the <a href="https://posit.co/download/rstudio-desktop/" target="_blank">RStudio download page</a> for your computer (Windows, MacOS, or Linux).</p>
+            
+            <h3>Launch RStudio</h3>
+            <p>Open RStudio after installation, and start coding in R.</p>
+
+            <h3>Tutorial video</h3>
+            <p>
+                <a href="https://youtu.be/F_E5LkrS93I" target="_blank">
+                    <img src="https://img.youtube.com/vi/F_E5LkrS93I/hqdefault.jpg" alt="Tutorial Video" width="600">
+                </a>
+            </p>
+
+        </ul>
+        </div>
+
+        <!-- Basic R code -->
+        <div id="basicR" class="section">
+            <h2>2. Essential R Code</h2>
+        <ul>
+            <li>Loading data: CSV, TSV, Excel, RDS, RData</li>
+            <li>Inspecting data: <code>head()</code>, <code>str()</code>, <code>summary()</code></li>
+            <li>Manipulating data with dplyr: <code>filter()</code>, <code>select()</code>, and <code>mutate()</code> to manage rows, columns, and new variables</li>
+            <li>Summarizing data: <code>group_by()</code> and <code>summarise()</code> to calculate grouped stats</li>
+            <li>Visualization with ggplot2</li>
+            <li>Statistical test</li>
+            <li>Exporting PDF file with: <code>pdf()</code> and <code>dev.off()</code></li>
+        </ul>
+        </div>
+        
+
+        <!-- Single-cell RNA sequencing data processing -->
+        <div id="data_processing" class="section">
+            <h2>3. scRNA-seq data processing</h2>
+            <img src="/Users/tranchau/Documents/OMG_tutorial/scRNA-seq_pipeline.jpg" alt="scRNA-seq data processing pipeline" width="600">
+            <ul>
+                <li>Convert the count matrix (gene x cell) to a Seurat object</li>
+                <li>Filter out the low-quality cells</li>
+                <li>Normalize the data</li>
+                <li>Find highly variable genes</li>
+                <li>Scale the data</li>
+                <li>Reduce data dimensions using PCA</li>
+                <li>Cluster cells by applying the graph-based method</li>
+                <li>Visualize cluster cells using UMAP</li>
+            
+            <h3>Tutorial video</h3>
+            <p>
+                <a href="https://youtu.be/wOFnqiXRw3s" target="_blank">
+                    <img src="https://img.youtube.com/vi/wOFnqiXRw3s/hqdefault.jpg" alt="Tutorial Video" width="600">
+                </a>
+            </p>
+            </ul>
+        </div>
+
+        <!-- Marker genes identification -->
+        <div id="markergenes" class="section">
+            <h2>4. Marker genes identification</h2>
+            
+            <ul>
+            <li>Load the libraries</li>
+            <pre><code>
+library(Seurat)
+library(tidyverse)
+            </code></pre>
+
+            <li>Load dataset</li>
+            <pre><code>
+ATH_root = readRDS("/Users/tranchau/Documents/GFP_2024/Data/S11_WER_GFP/Seurat_Obj_WER_wlabels.rds")
+            </code></pre>
+
+            <li>Find marker genes</li>
+            <pre><code>
+ATH_root_marker <- FindAllMarkers(ATH_root, only.pos = TRUE, min.pct = 0.5, logfc.threshold = 0.5) %>% 
+                                  group_by(cluster) %>% 
+                                  arrange(cluster, desc(avg_log2FC))
+
+head(ATH_root_marker)
+table(ATH_root_marker$cluster) #summarize number of genes in each cluster
+            </code></pre>
+            
+
+            <h3>Tutorial video</h3>
+            <p>
+                <a href="https://youtu.be/oliRmER1rXw" target="_blank">
+                    <img src="https://img.youtube.com/vi/oliRmER1rXw/hqdefault.jpg" alt="Tutorial Video" width="600">
+                </a>
+            </p>
+            </ul>
+        </div>
+
+        <!-- Browser guidence -->
+        <div id="websiteguide" class="section">
+            <h2>5. OMG browser guidence</h2>
+            This OMG browser enables plant biologists to quickly compare cell types across species and identify cell types in new samples.
+        </div>
+
+        <!-- Code guidence -->
+        <div id="codeguide" class="section">
+            <h2>6. OMG code guidence</h2>
+            The scripts for the analysis can be found at our GitHub repository.
+        </div>
+        
+        <!-- Contact -->
+        <div id="contact" class="section">
+            <h2>7. Contact me</h2>
+            <p>For more information, please contact me at <a href="mailto:tnchau@vt.edu">tnchau@vt.edu</a>.</p>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; Chau, T. N., et al. "Orthologous marker groups reveal broad cell identity conservation across plant single-cell transcriptomes." bioRxiv, 2023, doi:10.1101/2023.06.18.545471.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

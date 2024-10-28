@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install R and RStudio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #800064;
+        }
+        h3 {
+            color: #ff00d0;
+        }
+        code {
+            background-color: #eaeaea;
+            padding: 2px 4px;
+            font-size: 1em;
+            color: #d63384;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        ul {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Install R and RStudio</h1>
+    
+    <h2>1. Install R</h2>
+    <p>RStudio requires R to be installed. Here's how to install R:</p>
+    
+    <h3>For Windows:</h3>
+    <ul>
+        <li>Go to the <a href="https://cran.r-project.org/bin/windows/base/" target="_blank">R for Windows</a> download page</li>
+        <li>Click on the <strong>Download R for Windows</strong> link on the top</li>
+        <li>Download the <code>.exe</code> file, then open the file to begin installation</li>
+        <li>Follow the installation prompts to complete the setup.</li>
+    </ul>
+    
+    <h3>For macOS:</h3>
+    <ul>
+        <li>Go to the <a href="https://cran.r-project.org/bin/macosx/" target="_blank">R for macOS</a> download page.</li>
+        <li>Choose the Right R Version: Apple Silicon Macs or Intel Macs</li>
+        <li>Download the <code>.pkg</code> file, then open the file to begin installation.</li>
+        <li>Follow the installation prompts to complete the setup.</li>
+    </ul>
+    
+    <h3>For Linux (Ubuntu):</h3>
+    <ul>
+        <li>Open the terminal and update the apt package lists</li>
+        <li>Install the R base package and its dependencies</li>
+    </ul>
+    <pre><code>
+        sudo apt update
+        sudo apt install r-base r-base-dev -y
+    </code></pre>
+    <p>This will install the latest version of R.</p>
+    
+    <h2>2. Install RStudio</h2>
+    <p>After installing R, you can install RStudio, an IDE that makes it easier to work with R.</p>
+    <ul>
+        <li>Go to the <a href="https://posit.co/download/rstudio-desktop/" target="_blank">RStudio download page</a>.</li>
+        <li>Choose the version for your operating system (Windows, macOS, or Linux).</li>
+        <li>Download the installer and open it to begin the installation.</li>
+        <li>Follow the installation prompts to complete the setup.</li>
+    </ul>
+    
+    <h2>3. Launch RStudio</h2>
+    <p>Once both R and RStudio are installed, open <strong>RStudio</strong>. RStudio can detect your R installation and allow you to start coding in R right away.</p>
+
+    <h2>4. Tutorial video</h2>
+    <p>
+        <a href="https://youtu.be/F_E5LkrS93I" target="_blank">
+            <img src="https://img.youtube.com/vi/F_E5LkrS93I/hqdefault.jpg" alt="Tutorial Video" width="400">
+        </a>
+    </p>
+</body>
+</html>
